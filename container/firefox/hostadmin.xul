@@ -19,7 +19,7 @@
 		<menupopup id="hostadmin-popup">
 		</menupopup>
 		<statusbarpanel id="hostadmin-panel">
-		    <label value="Not in Hosts" id="hostadmin-label"/>
+		    <label value="Hosts" id="hostadmin-label"/>
 		</statusbarpanel>
 	</statusbar>
 

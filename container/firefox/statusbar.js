@@ -29,12 +29,12 @@
 
         nslookup(function(ip){
             var curHost = host_admin.real_hostname(_curHost);
-            var comment = "Not in Hosts";
+            var comment = "[N]";
             var hosts = host_admin.get_hosts();
             if (typeof hosts[curHost] != "undefined") {
                 hosts = hosts[curHost];
                 for (var i in hosts){
-                    comment = "In Hosts";
+                    comment = "[In]";
                     if(hosts[i].using){
                         ip = hosts[i].addr;
                         comment = hosts[i].comment;
