@@ -112,6 +112,8 @@
 	var refresh_menu = function(){
 		var curHost = container.curhost();
 		var menu = document.getElementById("hostadmin-popup");
+		var hostsMenu = document.createElement("menupopup");
+		var hostsMenuP = document.createElement("menu");
 		
 		while (menu.lastChild) menu.removeChild(menu.lastChild);
 		var hosts = host_admin.get_hosts();
@@ -122,6 +124,9 @@
 		var tosortKey = [];
 		var tosortM = [];
 			
+		hostsMenuP.setAttribute("label", "hosts");
+		hostsMenuP.appendChild(hostsMenu);
+		menu.appendChild(hostsMenuP);
 		for (var h in hosts){
 			var sub = document.createElement("menu");
 			sub.setAttribute("label", h);
@@ -171,7 +176,7 @@
 		}
 		tosortKey = tosortKey.sort();
 		for (var k in tosortKey){
-			menu.appendChild(tosortM[tosortKey[k]]);
+			hostsMenu.appendChild(tosortM[tosortKey[k]]);
 		}
 
 		if ( groups.length > 0){
